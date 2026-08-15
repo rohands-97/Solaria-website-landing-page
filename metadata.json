@@ -1,0 +1,6 @@
+{
+  "name": "Solaria Cement India",
+  "description": "Hero section for the Solaria Cement India homepage matching the Figma design reference with sticky header, 150 years heritage messaging, and responsive hero visual.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

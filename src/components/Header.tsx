@@ -8,15 +8,14 @@ export const Header: React.FC = () => {
   const navLinks = [
     { label: 'About us', href: '#proof-of-trust' },
     { label: 'Products', href: '#our-cement-section' },
-    { label: 'Solutions', href: '#specifications-section' },
+    { label: 'Investors', href: '#specifications-section' },
     { label: 'Sustainability', href: '#our-cement-section' },
-    { label: 'Heritage', href: '#proof-of-trust' },
   ];
 
   return (
     <header
       id="main-header"
-      className="w-full bg-[#faf8f5] transition-colors"
+      className="w-full bg-[#FAF7F0] transition-colors"
     >
       <div className="mx-auto flex h-20 max-w-[1360px] items-center justify-between px-6 sm:px-8 lg:px-12">
         {/* Left: Brand Logo */}
@@ -105,7 +104,7 @@ export const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div
           id="mobile-navigation-drawer"
-          className="md:hidden bg-[#faf8f5] border-b border-[#e5e0d6] px-6 py-4 space-y-3 text-[#211f1c]"
+          className="md:hidden bg-[#FAF7F0] border-b border-[#e5e0d6] px-6 py-4 space-y-3 text-[#211f1c]"
         >
           <div className="flex flex-col space-y-3">
             {navLinks.map((item) => (

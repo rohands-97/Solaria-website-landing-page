@@ -2,13 +2,13 @@
 
 @layer base {
   :root {
-    --bg-primary: #faf8f5;
+    --bg-primary: #FAF7F0;
     --text-primary: #211f1c;
     --accent-orange: #e15118;
   }
 
   body {
-    background-color: #faf8f5;
+    background-color: #FAF7F0;
     color: #211f1c;
     font-family: 'Source Sans 3', sans-serif;
   }

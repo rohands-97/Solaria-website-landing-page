@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero-section"
-      className="relative w-full bg-[#faf8f5] pt-[60px] pb-16 sm:pb-20 md:pb-24"
+      className="relative w-full bg-[#FAF7F0] pt-[60px] pb-16 sm:pb-20 md:pb-24"
       aria-label="Solaria Cement Hero"
     >
       <div className="mx-auto max-w-[1360px] px-6 sm:px-8 lg:px-12">
@@ -19,15 +19,22 @@ export const HeroSection: React.FC = () => {
           {/* Headline */}
           <h1
             id="hero-headline"
-            className="hero-headline font-black text-[#211f1c]"
+            className="hero-headline text-center text-[#211f1c]"
             style={{
-              fontFamily: "'Archivo Black', sans-serif",
-              fontSize: 'clamp(32px, 5vw, 48px)',
-              lineHeight: '1.166667',
+              fontFamily: "'Archivo', sans-serif",
+              fontWeight: 800,
+              fontSize: '48px',
+              lineHeight: '56px',
               letterSpacing: '-0.96px',
+              color: '#211f1c',
+              textAlign: 'center',
             }}
           >
-            Trusted for 150 years
+            <span>Trusted for </span>
+            <span className="italic" style={{ fontStyle: 'italic' }}>
+              150
+            </span>
+            <span> years</span>
           </h1>
 
           {/* Subhead */}
@@ -54,7 +61,7 @@ export const HeroSection: React.FC = () => {
           {/* CTA Buttons Row */}
           <div
             id="hero-cta-group"
-            className="mt-6 mb-[60px] flex flex-wrap items-center justify-center gap-4"
+            className="mt-6 mb-[80px] flex flex-wrap items-center justify-center gap-4"
           >
             <a
               href="#find-a-dealer"
@@ -115,9 +122,9 @@ export const HeroSection: React.FC = () => {
                 backgroundColor: 'rgba(33, 31, 28, 0.8)',
                 borderRadius: '8px',
                 padding: '24px',
-                maxWidth: '758px',
+                maxWidth: '680px',
               }}
-              className="w-full shadow-2xl"
+              className="w-full max-w-[680px] shadow-2xl"
             >
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <h2

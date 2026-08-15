@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { MapPin } from 'lucide-react';
 
 export const FindADealerSection: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
   const [locationQuery, setLocationQuery] = useState('');
   const [isLocating, setIsLocating] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
@@ -75,8 +77,12 @@ export const FindADealerSection: React.FC = () => {
 
       {/* Centered Overlay Card */}
       <div className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-        <div
+        <motion.div
           id="dealer-overlay-card"
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
           className="w-full max-w-[525px] shadow-2xl flex flex-col"
           style={{
             backgroundColor: 'rgba(33, 31, 28, 0.8)',
@@ -86,8 +92,12 @@ export const FindADealerSection: React.FC = () => {
         >
           {/* Text Block: Headline + Subhead (8px vertical gap) */}
           <div className="flex flex-col items-center text-center">
-            <h2
+            <motion.h2
               id="dealer-headline"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0 }}
               className="font-bold text-white tracking-tight"
               style={{
                 fontFamily: "'Archivo', sans-serif",
@@ -99,9 +109,13 @@ export const FindADealerSection: React.FC = () => {
               }}
             >
               Find your nearest dealer.
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
               id="dealer-subhead"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.07 }}
               className="mt-2 text-white text-center"
               style={{
                 fontFamily: "'Source Sans 3', sans-serif",
@@ -113,12 +127,16 @@ export const FindADealerSection: React.FC = () => {
               }}
             >
               Enter your location, or let us find it for you.
-            </p>
+            </motion.p>
           </div>
 
           {/* Form Block (24px gap from text block) */}
-          <form
+          <motion.form
             id="dealer-search-form"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.14 }}
             onSubmit={handleSearchSubmit}
             className="mt-6 flex flex-col w-full"
           >
@@ -136,7 +154,7 @@ export const FindADealerSection: React.FC = () => {
                   if (statusMessage) setStatusMessage(null);
                 }}
                 placeholder="Enter location or city"
-                className="w-full h-12 px-4 rounded-[8px] bg-[#faf8f5] text-[#211f1c] placeholder-[#737373] text-base transition-shadow duration-150 focus:outline-none focus:ring-2 focus:ring-[#e15118] border-none"
+                className="w-full h-12 px-4 rounded-[8px] bg-[#FAF7F0] text-[#211f1c] placeholder-[#737373] text-base transition-shadow duration-150 focus:outline-none focus:ring-2 focus:ring-[#e15118] border-none"
                 style={{
                   fontFamily: "'Source Sans 3', sans-serif",
                   fontWeight: 400,
@@ -194,8 +212,8 @@ export const FindADealerSection: React.FC = () => {
                 {statusMessage}
               </p>
             )}
-          </form>
-        </div>
+          </motion.form>
+        </motion.div>
       </div>
     </section>
   );

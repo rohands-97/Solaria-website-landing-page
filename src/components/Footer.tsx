@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -38,7 +40,13 @@ export const Footer: React.FC = () => {
         {/* Block 2: Newsletter Block (Left) + Link Columns (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Newsletter Form Block (Left ~42%) */}
-          <div className="lg:col-span-5 flex flex-col max-w-[460px]">
+          <motion.div
+            className="lg:col-span-5 flex flex-col max-w-[460px]"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0 }}
+          >
             <h3
               id="newsletter-heading"
               className="font-bold text-white tracking-tight"
@@ -89,7 +97,7 @@ export const Footer: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full h-12 pl-11 pr-4 rounded-[8px] bg-[#faf8f5] text-[#211f1c] placeholder-[#737373] text-base transition-shadow duration-150 focus:outline-none focus:ring-2 focus:ring-[#e15118] border-none"
+                  className="w-full h-12 pl-11 pr-4 rounded-[8px] bg-[#FAF7F0] text-[#211f1c] placeholder-[#737373] text-base transition-shadow duration-150 focus:outline-none focus:ring-2 focus:ring-[#e15118] border-none"
                   style={{
                     fontFamily: "'Source Sans 3', sans-serif",
                     fontWeight: 400,
@@ -115,12 +123,18 @@ export const Footer: React.FC = () => {
                 {isSubmitted ? 'Subscribed' : 'Submit'}
               </button>
             </form>
-          </div>
+          </motion.div>
 
           {/* 3 Equal Link Columns (Right ~58%) */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 pt-2 lg:pt-0">
             {/* Column 1: Company */}
-            <div className="flex flex-col">
+            <motion.div
+              className="flex flex-col"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.08 }}
+            >
               <h4
                 className="font-bold text-white tracking-tight"
                 style={{
@@ -153,10 +167,16 @@ export const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Column 2: Products */}
-            <div className="flex flex-col">
+            <motion.div
+              className="flex flex-col"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.14 }}
+            >
               <h4
                 className="font-bold text-white tracking-tight"
                 style={{
@@ -189,10 +209,16 @@ export const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Column 3: Find us */}
-            <div className="flex flex-col">
+            <motion.div
+              className="flex flex-col"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.20 }}
+            >
               <h4
                 className="font-bold text-white tracking-tight"
                 style={{
@@ -225,7 +251,7 @@ export const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
 

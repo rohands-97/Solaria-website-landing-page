@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { SolariaLogoMark } from './SolariaLogoMark';
 
 interface ProofItem {
@@ -31,6 +32,8 @@ const PROOF_STATS: ProofItem[] = [
 ];
 
 export const ProofOfTrustSection: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
       id="proof-of-trust-section"
@@ -54,8 +57,12 @@ export const ProofOfTrustSection: React.FC = () => {
         {/* Header Block: Eyebrow + Headline (Center Aligned) */}
         <div className="w-full max-w-[840px] text-center mb-14 sm:mb-16 md:mb-20">
           {/* Eyebrow */}
-          <p
+          <motion.p
             id="proof-eyebrow"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0 }}
             className="uppercase font-medium"
             style={{
               fontFamily: "'Archivo', sans-serif",
@@ -67,11 +74,15 @@ export const ProofOfTrustSection: React.FC = () => {
             }}
           >
             WHY TRUST US
-          </p>
+          </motion.p>
 
           {/* Headline */}
-          <h2
+          <motion.h2
             id="proof-headline"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.07 }}
             className="mt-3 sm:mt-4 font-bold text-white"
             style={{
               fontFamily: "'Archivo', sans-serif",
@@ -83,7 +94,7 @@ export const ProofOfTrustSection: React.FC = () => {
             }}
           >
             We build to a higher standards
-          </h2>
+          </motion.h2>
         </div>
 
         {/* 4-Column Stat Row */}
@@ -95,9 +106,17 @@ export const ProofOfTrustSection: React.FC = () => {
             const isLast = index === PROOF_STATS.length - 1;
 
             return (
-              <div
+              <motion.div
                 key={stat.id}
                 id={stat.id}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.4,
+                  ease: 'easeOut',
+                  delay: 0.15 + index * 0.06,
+                }}
                 className={`relative flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 ${
                   !isLast
                     ? 'lg:border-r lg:border-[rgba(255,255,255,0.15)]'
@@ -141,7 +160,7 @@ export const ProofOfTrustSection: React.FC = () => {
                     aria-hidden="true"
                   />
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </dl>

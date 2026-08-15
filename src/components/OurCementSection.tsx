@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
 interface ProductCardData {
@@ -37,6 +38,7 @@ const PRODUCTS: ProductCardData[] = [
 ];
 
 export const OurCementSection: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
   // hoveredCardId tracks manual user hover. If null, activeCardId defaults to 'card-opc-43'
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
 
@@ -46,7 +48,7 @@ export const OurCementSection: React.FC = () => {
   return (
     <section
       id="our-cement-section"
-      className="relative w-full bg-[#faf8f5] text-[#211f1c] flex items-center justify-center py-20 lg:py-[120px] md:min-h-screen"
+      className="relative w-full bg-[#FAF7F0] text-[#211f1c] flex items-center justify-center py-20 lg:py-[120px] md:min-h-screen"
       aria-labelledby="cement-headline"
     >
       <div className="mx-auto w-full max-w-[1360px] px-6 sm:px-8 lg:px-12 flex flex-col justify-center">
@@ -54,8 +56,12 @@ export const OurCementSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12 sm:mb-16 lg:mb-20">
           {/* Left Column: Eyebrow + Headline */}
           <div className="lg:col-span-6 flex flex-col">
-            <p
+            <motion.p
               id="cement-eyebrow"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0 }}
               className="uppercase font-medium text-[#1f4e5f]"
               style={{
                 fontFamily: "'Archivo', sans-serif",
@@ -66,9 +72,13 @@ export const OurCementSection: React.FC = () => {
               }}
             >
               OUR CEMENT
-            </p>
-            <h2
+            </motion.p>
+            <motion.h2
               id="cement-headline"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.07 }}
               className="mt-3 sm:mt-4 font-bold text-[#211f1c]"
               style={{
                 fontFamily: "'Archivo', sans-serif",
@@ -79,11 +89,17 @@ export const OurCementSection: React.FC = () => {
               }}
             >
               One standard of quality. Three product families.
-            </h2>
+            </motion.h2>
           </div>
 
           {/* Right Column: Intro paragraph */}
-          <div className="lg:col-span-6 flex items-start lg:pt-8">
+          <motion.div
+            className="lg:col-span-6 flex items-start lg:pt-8"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.14 }}
+          >
             <p
               id="cement-intro"
               className="text-[#211f1c]"
@@ -97,7 +113,7 @@ export const OurCementSection: React.FC = () => {
             >
               Every family meets the same BIS standard for quality. Solaria OPC 43 handles the everyday work of a build. Solaria OPC 53 carries the load-bearing structure. Solaria EcoBlend does the same job with a smaller footprint.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Dynamic Expanding Grid:
@@ -107,14 +123,22 @@ export const OurCementSection: React.FC = () => {
           id="cement-cards-container"
           className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch w-full"
         >
-          {PRODUCTS.map((product) => {
+          {PRODUCTS.map((product, index) => {
             const isActive = activeCardId === product.id;
             const cardBgColor = isActive ? 'bg-[#211f1c]' : 'bg-[#404040]';
 
             return (
-              <div
+              <motion.div
                 key={product.id}
                 id={product.id}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.4,
+                  ease: 'easeOut',
+                  delay: 0.21 + index * 0.06,
+                }}
                 onMouseEnter={() => setHoveredCardId(product.id)}
                 onMouseLeave={() => setHoveredCardId(null)}
                 className={`group relative overflow-hidden rounded-[20px] p-6 sm:p-8 flex flex-col justify-end transition-all duration-400 ease-in-out cursor-pointer select-none shadow-sm hover:shadow-md ${cardBgColor} min-h-[500px] sm:min-h-[540px] lg:min-h-[580px] ${
@@ -203,7 +227,7 @@ export const OurCementSection: React.FC = () => {
                   className="absolute inset-0 rounded-[20px] border border-white/0 group-hover:border-white/10 transition-colors duration-300 pointer-events-none"
                   aria-hidden="true"
                 />
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -171,7 +171,7 @@ export const FindADealerSection: React.FC = () => {
               <button
                 id="dealer-search-submit-btn"
                 type="submit"
-                className="w-full sm:flex-1 h-12 rounded-[8px] bg-[#e15118] border border-[#e15118] text-white font-semibold flex items-center justify-center transition-all duration-150 hover:bg-[#c94512] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
+                className="w-full sm:flex-1 h-12 rounded-[8px] bg-[#d8450e] border border-[#d8450e] text-white font-semibold flex items-center justify-center transition-all duration-150 hover:bg-[#b83808] hover:border-[#b83808] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
                 style={{
                   fontFamily: "'Source Sans 3', sans-serif",
                   fontWeight: 600,
@@ -189,7 +189,7 @@ export const FindADealerSection: React.FC = () => {
                 type="button"
                 onClick={handleUseMyLocation}
                 disabled={isLocating}
-                className="w-full sm:flex-1 h-12 rounded-[8px] bg-transparent text-white font-semibold flex items-center justify-center gap-2 transition-all duration-150 hover:bg-white/10 active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer disabled:opacity-60"
+                className="w-full sm:flex-1 h-12 rounded-[8px] border border-white/40 bg-transparent text-white font-semibold flex items-center justify-center gap-2 transition-all duration-150 hover:bg-white hover:text-[#211f1c] hover:border-white active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer disabled:opacity-60"
                 style={{
                   fontFamily: "'Source Sans 3', sans-serif",
                   fontWeight: 600,
@@ -197,7 +197,7 @@ export const FindADealerSection: React.FC = () => {
                   lineHeight: '24px',
                 }}
               >
-                <MapPin className="h-4 w-4 stroke-[2.2] text-white shrink-0" aria-hidden="true" />
+                <MapPin className="h-4 w-4 stroke-[2.2] shrink-0" aria-hidden="true" />
                 <span>{isLocating ? 'Locating...' : 'Use my location'}</span>
               </button>
             </div>

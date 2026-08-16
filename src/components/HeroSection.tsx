@@ -17,8 +17,12 @@ export const HeroSection: React.FC = () => {
         {/* Intro Block: Headline, Subhead, CTA Buttons */}
         <div className="mx-auto max-w-[840px] text-center">
           {/* Headline */}
-          <h1
+          <motion.h1
             id="hero-headline"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0 }}
             className="hero-headline text-center text-[#211f1c]"
             style={{
               fontFamily: "'Archivo', sans-serif",
@@ -35,11 +39,15 @@ export const HeroSection: React.FC = () => {
               150
             </span>
             <span> years</span>
-          </h1>
+          </motion.h1>
 
           {/* Subhead */}
-          <div
+          <motion.div
             id="hero-subhead"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.07 }}
             className="hero-subhead mx-auto mt-4 max-w-[620px] text-[#211F1C]"
             style={{
               fontFamily: "'Source Sans 3', sans-serif",
@@ -56,17 +64,21 @@ export const HeroSection: React.FC = () => {
             <p className="text-[#211F1C] text-[20px] leading-[28px]" style={{ color: '#211F1C', fontSize: '20px', lineHeight: '28px' }}>
               every batch, before it reaches your site.
             </p>
-          </div>
+          </motion.div>
 
           {/* CTA Buttons Row */}
-          <div
+          <motion.div
             id="hero-cta-group"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.14 }}
             className="mt-6 mb-[80px] flex flex-wrap items-center justify-center gap-4"
           >
             <a
               href="#find-a-dealer"
               id="hero-primary-cta"
-              className="btn-primary group inline-flex items-center justify-center gap-1.5 rounded-lg px-6 py-3 text-center transition-all duration-150 bg-[#e15118] text-white border border-[#e15118] hover:bg-[#c94512] hover:border-[#c94512] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e15118] focus-visible:ring-offset-2 cursor-pointer shadow-sm"
+              className="btn-primary group inline-flex items-center justify-center gap-1.5 rounded-lg px-6 py-3 text-center transition-all duration-150 bg-[#d8450e] text-white border border-[#d8450e] hover:bg-[#b83808] hover:border-[#b83808] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d8450e] focus-visible:ring-offset-2 cursor-pointer shadow-sm"
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontWeight: 600,
@@ -84,7 +96,7 @@ export const HeroSection: React.FC = () => {
             <a
               href="#our-cement-section"
               id="hero-secondary-cta"
-              className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-center transition-all duration-150 border border-[#211f1c] bg-transparent text-[#211f1c] hover:bg-[#211f1c]/5 active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#211f1c] focus-visible:ring-offset-2 cursor-pointer"
+              className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-center transition-all duration-150 border border-[#211f1c] bg-transparent text-[#211f1c] hover:bg-[#211f1c] hover:text-white hover:border-[#211f1c] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#211f1c] focus-visible:ring-offset-2 cursor-pointer shadow-sm"
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontWeight: 600,
@@ -94,12 +106,16 @@ export const HeroSection: React.FC = () => {
             >
               <span>See our products</span>
             </a>
-          </div>
+          </motion.div>
         </div>
 
         {/* Inset Hero Image with Rounded Corners & Reveal Overlay Card */}
-        <div
+        <motion.div
           id="hero-image-wrapper"
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.21 }}
           className="relative mx-auto w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-md border border-[#211f1c]/5 flex items-end justify-start min-h-[480px] sm:min-h-[580px] md:min-h-[660px] lg:min-h-[760px]"
         >
           <img
@@ -158,7 +174,7 @@ export const HeroSection: React.FC = () => {
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

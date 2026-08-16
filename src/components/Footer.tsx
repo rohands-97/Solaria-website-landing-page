@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
               <button
                 id="newsletter-submit-btn"
                 type="submit"
-                className="h-12 px-6 sm:px-7 shrink-0 rounded-[8px] bg-[#e15118] border border-[#e15118] text-white font-semibold flex items-center justify-center transition-all duration-150 hover:bg-[#c94512] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
+                className="h-12 px-6 sm:px-7 shrink-0 rounded-[8px] bg-[#d8450e] border border-[#d8450e] text-white font-semibold flex items-center justify-center transition-all duration-150 hover:bg-[#b83808] hover:border-[#b83808] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
                 style={{
                   fontFamily: "'Source Sans 3', sans-serif",
                   fontWeight: 600,

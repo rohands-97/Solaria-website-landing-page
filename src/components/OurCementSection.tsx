@@ -183,7 +183,7 @@ export const OurCementSection: React.FC = () => {
                   {/* "Learn more" Link with Arrow */}
                   <div className="mt-4 flex items-center">
                     <span
-                      className="inline-flex items-center gap-2 font-semibold text-[#e15118]"
+                      className="inline-flex items-center gap-2 font-semibold text-[#ff7a45] group-hover:text-[#ffa07a] transition-colors"
                       style={{
                         fontFamily: "'Source Sans 3', sans-serif",
                         fontWeight: 600,

@@ -96,18 +96,17 @@ export const SpecificationsSection: React.FC = () => {
               id="download-specs-btn"
               href="#download"
               onClick={handleDownloadPdf}
-              className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-[8px] bg-transparent text-[#f5ca20] font-semibold transition-all duration-150 hover:bg-white/10 active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f5ca20] cursor-pointer"
+              className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-[8px] border border-[#f5ca20] bg-transparent text-[#f5ca20] font-semibold transition-all duration-150 hover:bg-[#f5ca20] hover:text-[#1f4e5f] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f5ca20] cursor-pointer"
               style={{
                 fontFamily: "'Source Sans 3', sans-serif",
                 fontWeight: 600,
                 fontSize: '16px',
                 lineHeight: '24px',
-                color: '#f5ca20',
               }}
               aria-label="Download PDF specifications"
             >
               <span>Download Pdf specs</span>
-              <ArrowDown className="h-4 w-4 stroke-[2.2] text-[#f5ca20] transition-transform duration-200 group-hover:translate-y-0.5" aria-hidden="true" />
+              <ArrowDown className="h-4 w-4 stroke-[2.2] transition-transform duration-200 group-hover:translate-y-0.5" aria-hidden="true" />
             </a>
           </div>
         </div>

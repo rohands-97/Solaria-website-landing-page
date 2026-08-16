@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
           <a
             href="#find-a-dealer"
             id="header-cta-button"
-            className="btn-primary hidden sm:inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-center transition-all duration-150 bg-[#e15118] text-white border border-[#e15118] hover:bg-[#c94512] hover:border-[#c94512] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e15118] focus-visible:ring-offset-2 cursor-pointer shadow-sm"
+            className="btn-primary hidden sm:inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-center transition-all duration-150 bg-[#d8450e] text-white border border-[#d8450e] hover:bg-[#b83808] hover:border-[#b83808] active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d8450e] focus-visible:ring-offset-2 cursor-pointer shadow-sm"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontWeight: 600,
@@ -87,7 +87,7 @@ export const Header: React.FC = () => {
             type="button"
             id="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="inline-flex md:hidden items-center justify-center p-2 rounded-md text-[#211f1c] hover:text-[#e15118] hover:bg-[#211f1c]/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e15118]"
+            className="inline-flex md:hidden items-center justify-center p-2 rounded-md text-[#211f1c] hover:text-[#d8450e] hover:bg-[#211f1c]/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d8450e]"
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
           >
@@ -112,7 +112,7 @@ export const Header: React.FC = () => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-[#211f1c] hover:text-[#e15118] py-2 text-base font-normal transition-colors"
+                className="text-[#211f1c] hover:text-[#d8450e] py-2 text-base font-normal transition-colors"
                 style={{
                   fontFamily: "'Source Sans 3', sans-serif",
                   fontSize: '16px',
@@ -128,7 +128,7 @@ export const Header: React.FC = () => {
                 href="#find-a-dealer"
                 onClick={() => setMobileMenuOpen(false)}
                 id="mobile-drawer-cta"
-                className="btn-primary w-full flex items-center justify-center rounded-lg px-5 py-3 text-center transition-all duration-150 bg-[#e15118] text-white border border-[#e15118] hover:bg-[#c94512] hover:border-[#c94512] active:scale-[0.99] cursor-pointer"
+                className="btn-primary w-full flex items-center justify-center rounded-lg px-5 py-3 text-center transition-all duration-150 bg-[#d8450e] text-white border border-[#d8450e] hover:bg-[#b83808] hover:border-[#b83808] active:scale-[0.99] cursor-pointer"
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontWeight: 600,

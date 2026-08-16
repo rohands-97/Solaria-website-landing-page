@@ -9,7 +9,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen w-full bg-[#FAF7F0] text-[#211f1c] antialiased selection:bg-[#e15118] selection:text-white">
+    <div className="min-h-screen w-full bg-[#FAF8F5] text-[#211f1c] antialiased selection:bg-[#e15118] selection:text-white">
       {/* 1. Header */}
       <Header />
 

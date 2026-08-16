@@ -48,7 +48,7 @@ export const OurCementSection: React.FC = () => {
   return (
     <section
       id="our-cement-section"
-      className="relative w-full bg-[#FAF7F0] text-[#211f1c] flex items-center justify-center py-20 lg:py-[120px] md:min-h-screen"
+      className="relative w-full bg-[#FAF8F5] text-[#211f1c] flex items-center justify-center py-20 lg:py-[120px] md:min-h-screen"
       aria-labelledby="cement-headline"
     >
       <div className="mx-auto w-full max-w-[1360px] px-6 sm:px-8 lg:px-12 flex flex-col justify-center">
@@ -125,7 +125,9 @@ export const OurCementSection: React.FC = () => {
         >
           {PRODUCTS.map((product, index) => {
             const isActive = activeCardId === product.id;
-            const cardBgColor = isActive ? 'bg-[#211f1c]' : 'bg-[#404040]';
+            const cardBgColor = isActive
+              ? 'bg-[#211f1c]'
+              : 'bg-[#211f1c] lg:bg-[#404040]';
 
             return (
               <motion.div
@@ -197,12 +199,12 @@ export const OurCementSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Product Image Reveal Container: Fades and slides in on active */}
+                {/* Product Image Container: Always visible on mobile, dynamic accordion on desktop (lg:) */}
                 <div
-                  className={`relative z-10 w-full mt-6 overflow-hidden rounded-[14px] transition-all duration-400 ease-in-out ${
+                  className={`relative z-10 w-full mt-6 overflow-hidden rounded-[14px] transition-all duration-400 ease-in-out opacity-100 max-h-[280px] translate-y-0 ${
                     isActive
-                      ? 'opacity-100 max-h-[280px] translate-y-0'
-                      : 'opacity-0 max-h-0 translate-y-4 pointer-events-none'
+                      ? 'lg:opacity-100 lg:max-h-[280px] lg:translate-y-0'
+                      : 'lg:opacity-0 lg:max-h-0 lg:translate-y-4 lg:pointer-events-none'
                   }`}
                   style={{
                     aspectRatio: '16 / 8.5',

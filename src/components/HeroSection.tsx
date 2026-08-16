@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero-section"
-      className="relative w-full bg-[#FAF7F0] pt-[60px] pb-16 sm:pb-20 md:pb-24"
+      className="relative w-full bg-[#FAF8F5] pt-[60px] pb-16 sm:pb-20 md:pb-24"
       aria-label="Solaria Cement Hero"
     >
       <div className="mx-auto max-w-[1360px] px-6 sm:px-8 lg:px-12">
@@ -48,7 +48,7 @@ export const HeroSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.07 }}
-            className="hero-subhead mx-auto mt-4 max-w-[620px] text-[#211F1C]"
+            className="hero-subhead mx-auto mt-4 max-w-[500px] text-[#211F1C]"
             style={{
               fontFamily: "'Source Sans 3', sans-serif",
               fontWeight: 400,
@@ -58,11 +58,8 @@ export const HeroSection: React.FC = () => {
               color: '#211F1C',
             }}
           >
-            <p className="text-[#211F1C] text-[20px] leading-[28px]" style={{ color: '#211F1C', fontSize: '20px', lineHeight: '28px' }}>
-              150 years of German engineering. Tested at every plant, in
-            </p>
-            <p className="text-[#211F1C] text-[20px] leading-[28px]" style={{ color: '#211F1C', fontSize: '20px', lineHeight: '28px' }}>
-              every batch, before it reaches your site.
+            <p className="text-[#211F1C] text-[18px] sm:text-[20px] leading-[26px] sm:leading-[28px]" style={{ color: '#211F1C' }}>
+              150 years of German engineering. Tested at every plant, in every batch, before it reaches your site.
             </p>
           </motion.div>
 
